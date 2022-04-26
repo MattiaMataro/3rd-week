@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <title>eventi</title>
+    </head>
+
+<body>
+
+    <a href="#" id="test">test</a>
+
+
+
+    <script>
+        // ottengo l'elemento 'test'
+        var test = document.getElementById('test');
+        // associa l'evento click alla callback
+        test.addEventListener('click', clickOnTest);
+        // definisco la funzione callback
+        function clickOnTest(event){
+                console.log('Click su test');
+        }
+
+
+        // funzione implicita
+       //  test.addEventListner('click',function (event) {console.log('click su test')});
+
+        /*
+        rimuovere associazione tra evento e handler
+        removeEventListner
+*/
+        test.removeEventListener('click', clickOnTest);
+
+    </script>
+
+</body>
+</html>

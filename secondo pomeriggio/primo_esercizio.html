@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <title>eventi</title>
+    </head>
+
+<body>
+    
+    <ul class="example">
+        <li class="child">Rugby</li>
+        <li class="child">Ciclismo</li>
+      </ul>
+      <ul class="example">
+        <li class="child">Nuoto</li>
+        <li class="child">Basket</li>
+        <li class="child">Curling</li>
+      </ul>
+      
+      <p>Clicca per cambiare il terzo elemento della seconda lista [senza usare getElementById].</p>
+      
+      <button>Prova</button>
+      
+      
+     
+
+    <script>
+         function myFunction() {
+          var list = document.getElementsByClassName("example")[1];
+          list.getElementsByClassName("child")[2].innerHTML = "Volley";
+      }
+
+    </script>
+</body>
+</html>

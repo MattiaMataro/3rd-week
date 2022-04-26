@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <title>mousehover</title>
+    </head>
+    <style>
+        .overClass{font-weight: bold; color: red;}
+        .outClass {font-weight: normal; color: black;}
+
+    </style>
+
+<body>
+
+<p id="paragrafo">Passa il mouse sopra questo paragrafo</p>
+    
+
+
+    <script>
+        var myParagrafo = document.getElementById("paragrafo");
+        myParagrafo.onmouseover=function(e) {e.target.className="overClass";};
+        myParagrafo.onmouseout=function(e) {e.target.className="outClass";};
+    </script>
+
+</body>
+</html>

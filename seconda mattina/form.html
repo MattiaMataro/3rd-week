@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <title>eventi</title>
+    </head>
+
+    <body>
+
+        <p id="mioTesto"></p>
+
+            
+            <input type="text" id="utente" name="utente"><br>
+            <button id="btn">onclick</button>
+            
+
+          <p></p>
+        
+        <script>
+            var btn = document.getElementById("btn");                       //ottiene l'elemento btn
+            btn.addEventListener("click", add);                             //associa l'evento alla callback (add)
+            function add () {                                               //definisce la funzione callback (add)
+                var testo=document.getElementById("mioTesto");              //ottiene il paragrafo vuoto
+                var nuovoUtente = document.getElementById("utente").value;  //ottiene il valore dell'input 
+                testo.innerHTML = nuovoUtente;                              //stampa in pagina il valore dell'input
+            }
+            
+
+        </script>
+    </body>
+
+</html>

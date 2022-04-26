@@ -1,0 +1,39 @@
+{
+    "discografia": [
+        {
+                "nomeAlbum":"Queen",
+                "nomeArtista": "Queen",
+                "anno" : "1973",
+                "songs" : [
+                    {
+                        "title" : "keep yourself alive"
+                    },
+                    {
+                        "title" : "doing all right"
+                     },
+                     {
+                        "title" : "great king right"
+                     }  
+                ]
+        },
+        {
+            "nomeAlbum":"Nursery Crime",
+            "nomeArtista": "genesis",
+            "anno" : "1971",
+            "songs" : [
+                {
+                    "title" : "Musical box"
+                },
+                {
+                    "title" : " For Absent Friend"
+                },
+                {
+                    "title" : "Seven Stones"
+                }
+            ]
+         
+        }
+    ]
+}
+        
+    

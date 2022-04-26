@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <title>seconda lezione</title>
+    </head>
+
+<body>
+    
+<p id="paragrafo">Testo iniziale</p>
+</body>
+
+<script>
+    /*
+        
+    //SELEZIONARE
+        var p = document.getElementById("ilMioParagrafo");  //getElementbyid ci restituisce un ID, document=oggetto, getElementById=metodo
+        //getElementsByName() --> a differemza del primo ci  restituisce un elenco di oggetti, cioè di Nodelist
+        var listaParagrafi = document.getElementsByTagName("p");
+        // restituisce una Nodelist con un elenco dei paragrafi del document (il tag p è quello specificato per i paragrafi)
+        var tuttiParagrafi = document.getElementsByTagName("*");
+        //selettore universale che restituisce tutti i tag
+        //getElementsByName -->Nodelist a cui è assegnato un determinato valore come attributo class
+
+        */
+
+
+
+    
+    //MODIFICARE
+    var p = document.getElementById("paragrafo").innerHTML="Hello World";
+
+    // Metodo.innerHTML (sia in lettura che scrittura) legge/modifica il cotenuto di un tag
+    
+    /* altri attributi
+    .hasAttribute(attrName)         --> restituisce true se l'elemento ha l'attributo specificato come parametro
+    .hasAttribute()                 --> restituisce true se l'elemneto ha un attributo
+    .getAttribute(attrName)         --> restituisce il valore dell'attributo specificato come parametro
+    .setAttribute(attrName,value)   --> imposta un valore per un attributo
+
+    possiamo interagire con un elemento del DOM come qualsiasi altro oggetto   
+    var img = document.getElementById("miaImmagine");
+    img.miaProprieta = "nuovo Valore";
+
+    distinzioni tra attributi e proprietà
+    1.una proprietà non è gestibile tramite getAttribute() o setAttribute()
+    2. Proprieta sono caseSensitive, Attributi no; img.getAttribute ("src")/("SRC") sono uguali
+    3. i valori assegnabili agli attributi sono solo stringhe, alle proprietà qualsiasi tipo di dato
+
+    la proprietà riflette il valore dell'attributo ma non sono sempre la stessa cosa
+    <img id="miaImmagine" src="default.png">
+    var img= ocument.getElementById("miaImmagine");
+    console.log(img.src);                       -->  https://www.epicode.it/deault.png
+    console.log(img.getAttribute("src"));       -->  deault.png   
+    getAttribute restituisce il valore dell'HTML, il valore restituito dalla proprietà è invece l'URL
+
+    <input id="txtNote" type"text" value="Mario" />
+    il valore dell'attributo value e della corrispondete proprietà coincidono, se l'utente cambia il value?
+    --> il valore della proprietà si sincronizza con il nuovo valore, mentre l'attributo continua ad aver il valore iniziale
+    --> quando è possibile è preferibile accedere alla proprieta dell'elemento anzichè all'attributo   
+    */
+
+    /*
+    AGGIUNGERE E RIMUOVERE ELEMENTI DEL DOM
+    */
+    var mainDiv = document.getElementById("mainDiv");
+    var img =document.createElement("img");             //uso createElement per creare un elemento <img>
+    var srcAttr = document.createAttribute("src");      //uso createAttribute per creare un attributo src
+    srcAttr.value = "default.png";                      //imposto il valore di src
+    img.setAttributeNode(srcAttr);                      // associo l'attributo src all'elemento <img>
+    mainDiv.appendChild(img);                           //aggiungiamo l'elemento in fondo all'elenco dei nodi figli del mainDiv
+
+    //insertBefore invece permette di inserire un nodo prima di un altro, questo metodo prevede due parametri
+    //primo parametro il nodo da inserire, secondo parametro nodo prima prima del quale inserirlo
+    document.body.insertBefore(img,mainDiv);
+    //per inserire dopo:
+    document.body.insertBefore(img,mainDiv.nextSibling); //inserire il nodo prima del fratello successivo del div
+
+    //rimpiazzare un nodo
+    //replaceChiled() --> sostituisce uno dei figli di un elemento con uno nuovo
+    mainDiv.replaceChild(img, mainDiv.firstChild())     //sostituisco il primo nodo con quello creato
+
+
+    //eliminare nodi e attributi
+    //removeChild()  e   removeAttribute()  consentono di eliminare rispettivamente nodo e attributo
+    mainDiv.removeChild(mainDiv.firstChild());          //rimuovo il primo nodo figlio di mainDiv
+    mainDiv.removeAttribute("class");                   //rimuovo l'attributo class da mainDiv
+
+
+// **********EVENTI************
+
+/*
+intercettare gli eventi --> handler --> cioè funzioni di callback che vengono associate ad un certo evento
+1. sfruttano una funzione addEventListener ()           --> metodo più utilizzato
+2. dentro il markup html tramite speciali attributi dei tag
+3. dentro a javascript associando specifiche proprietà degli elementi del DOM
+
+elemento.addEventListener(eveneto,callback, [useCapture]);
+    a) evento       --> stringa che definisce l'evento che vogliamo gestire (click, load, onMouseOver, onMouseOut)
+    b) callback     --> inseriamola chiamata a una funzione che definisce l'handler
+    c) useCapture   -->  opzionale, gestisce o forza le priorità di un certo evento
+
+*/
+</script>
+
+</html>
